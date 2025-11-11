@@ -19,19 +19,7 @@ class _AboutScreenState extends State<AboutScreen> {
   List<OrganizationType> _organizationTypes = [];
   bool _loadingSources = true;
   String? _errorSources;
-  /*
-  @override
-  void initState() {
-    super.initState();
-    final isAndroid = defaultTargetPlatform == TargetPlatform.android;
-    _orgService = OrganizationService(
-      baseUrl: isAndroid
-          ? 'http://10.0.2.2:8000' // ANDROID EMULADOR
-          : 'http://127.0.0.1:8000', // WEB / iOS SIMULATOR / DESKTOP
-    );
-    _loadOrganizations();
-  }
-  */
+
   @override
   void initState() {
     super.initState();

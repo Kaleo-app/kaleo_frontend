@@ -41,24 +41,7 @@ class _ResultsScreenState extends State<ResultsScreen> {
   int _page = 1;
   final int _pageSize = 10; // 10 ofertas por página
   int _total = 0; // total de convocatorias (viene del backend)
-  /*
-  @override
-  void initState() {
-    super.initState();
 
-    final isAndroid = defaultTargetPlatform == TargetPlatform.android;
-    _service = OpportunityService(
-      baseUrl: isAndroid ? 'http://10.0.2.2:8000' : 'http://127.0.0.1:8000',
-    );
-
-    // Solo redibujamos iconos al escribir; la búsqueda se ejecuta con Enter / botón
-    _search.addListener(() {
-      setState(() {});
-    });
-
-    _fetchPage(page: 1);
-  }
-*/
   @override
   void initState() {
     super.initState();

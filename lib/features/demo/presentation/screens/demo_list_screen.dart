@@ -43,24 +43,7 @@ class _DemoListScreenState extends State<DemoListScreen> {
   List<Opportunity> _expiringFiltered = [];
   bool _loadingExpiring = true;
   String? _expiringError;
-  /*
-  @override
-  void initState() {
-    super.initState();
-    
-    final isAndroid = defaultTargetPlatform == TargetPlatform.android;
-    _service = OpportunityService(
-      baseUrl: isAndroid
-          ? 'http://10.0.2.2:8000'   // ANDROID EMULADOR
-          : 'http://127.0.0.1:8000', // WEB / iOS / DESKTOP
-    );
 
-    _search.addListener(_applyFilters);
-
-    _fetchGeneral();
-    _fetchExpiringSoon();
-  }
-  */
   @override
   void initState() {
     super.initState();

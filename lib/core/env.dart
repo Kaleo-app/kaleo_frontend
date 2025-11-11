@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart' show kIsWeb, defaultTargetPlatform, TargetPlatform;
 
-const _definedBase = String.fromEnvironment('API_BASE_URL', defaultValue: '');
+const _definedBase = String.fromEnvironment('API_BASE_URL', defaultValue: 'https://kaleo-backend.onrender.com');
 
 String resolveBaseUrl() {
   // Producción: si viene por --dart-define, manda ahí SIEMPRE.
