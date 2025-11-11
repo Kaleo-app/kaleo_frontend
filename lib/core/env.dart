@@ -1,3 +1,29 @@
+import 'package:flutter/foundation.dart' show kIsWeb, defaultTargetPlatform, TargetPlatform;
+
+const _definedBase = String.fromEnvironment('API_BASE_URL', defaultValue: '');
+
+String resolveBaseUrl() {
+  // Producción: si viene por --dart-define, manda ahí SIEMPRE.
+  if (_definedBase.isNotEmpty) return _definedBase.trim();
+
+  // Desarrollo web local
+  if (kIsWeb) return 'http://127.0.0.1:8000';
+
+  // Desarrollo en emuladores / dispositivos
+  switch (defaultTargetPlatform) {
+    case TargetPlatform.android:
+      return 'http://10.0.2.2:8000';
+    case TargetPlatform.iOS:
+    case TargetPlatform.macOS:
+    case TargetPlatform.windows:
+    case TargetPlatform.linux:
+    default:
+      return 'http://127.0.0.1:8000';
+  }
+}
+
+
+/*
 import 'package:flutter/foundation.dart'
     show kIsWeb, defaultTargetPlatform, TargetPlatform;
 
@@ -23,7 +49,7 @@ String resolveBaseUrl() {
   }
 }
 
-/*
+
 import 'package:flutter/foundation.dart' show kIsWeb, defaultTargetPlatform, TargetPlatform;
 
 const _definedBase = String.fromEnvironment('API_BASE_URL');

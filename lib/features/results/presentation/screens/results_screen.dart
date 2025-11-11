@@ -41,7 +41,7 @@ class _ResultsScreenState extends State<ResultsScreen> {
   int _page = 1;
   final int _pageSize = 10; // 10 ofertas por página
   int _total = 0; // total de convocatorias (viene del backend)
-
+  /*
   @override
   void initState() {
     super.initState();
@@ -54,6 +54,19 @@ class _ResultsScreenState extends State<ResultsScreen> {
     // Solo redibujamos iconos al escribir; la búsqueda se ejecuta con Enter / botón
     _search.addListener(() {
       setState(() {});
+    });
+
+    _fetchPage(page: 1);
+  }
+*/
+  @override
+  void initState() {
+    super.initState();
+
+    _service = OpportunityService(); // sin baseUrl manual
+
+    _search.addListener(() {
+      setState(() {}); // solo actualiza el ícono
     });
 
     _fetchPage(page: 1);

@@ -19,7 +19,7 @@ class _AboutScreenState extends State<AboutScreen> {
   List<OrganizationType> _organizationTypes = [];
   bool _loadingSources = true;
   String? _errorSources;
-
+  /*
   @override
   void initState() {
     super.initState();
@@ -31,6 +31,16 @@ class _AboutScreenState extends State<AboutScreen> {
     );
     _loadOrganizations();
   }
+  */
+  @override
+  void initState() {
+    super.initState();
+
+    _orgService = OrganizationService(); // sin 10.0.2.2 / 127.0.0.1
+
+    _loadOrganizations();
+  }
+
 
   Future<void> _loadOrganizations() async {
     setState(() {
